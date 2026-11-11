@@ -1,0 +1,18 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="it.bose.overlay">
+  <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE"/>
+  <application android:label="Bose Overlay" android:icon="@drawable/bose_icon" android:banner="@drawable/bose_banner" android:theme="@android:style/Theme.Material.NoActionBar" android:usesCleartextTraffic="true">
+    <activity android:name=".Setup" android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LEANBACK_LAUNCHER"/>
+      </intent-filter>
+    </activity>
+    <service android:name=".Monitor" android:exported="false" android:foregroundServiceType="specialUse">
+      <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="Monitor local Bose volume and show it over TV playback"/>
+    </service>
+  </application>
+</manifest>

@@ -1,0 +1,4 @@
+Flask>=2
+gunicorn
+pyserial>=3.5
+evdev

@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+*.keystore
+*.apk
+*.idsig
+/android/classes/
+/android/dex/
+/android/generated/
+/android/dist/
+/android/*.jar
+/android/resources.zip
